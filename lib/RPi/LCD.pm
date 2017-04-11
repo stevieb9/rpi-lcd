@@ -1,4 +1,4 @@
-package RPi::WiringPi::LCD;
+package RPi::LCD;
 
 use strict;
 use warnings;
@@ -9,10 +9,11 @@ use parent 'WiringPi::API';
 use RPi::WiringPi::Constant qw(:all);
 
 sub new {
+    my $self = bless {}, shift;
     if (! defined $ENV{RPI_PIN_SCHEME}){
-        setup_gpio();
+        $self->setup_gpio();
     }
-    return bless {}, shift;
+    return $self;
 }
 sub init {
     my ($self, %params) = @_;
@@ -84,14 +85,14 @@ __END__
 
 =head1 NAME
 
-RPi::WiringPi::LCD - Perl interface to Raspberry Pi LCD displays via the GPIO
+RPi::LCD - Perl interface to Raspberry Pi LCD displays via the GPIO
 pins
 
 =head1 SYNOPSIS
 
-    use RPi::WiringPi::LCD;
+    use RPi::LCD;
 
-    my $lcd = RPi::WiringPi::LCD->new;
+    my $lcd = RPi::LCD->new;
 
     my %lcd_args = (
         rows  => 2,     # number of display rows, 2 or 4
@@ -133,7 +134,7 @@ L<RPi::WiringPi> object.
 
 =head2 new()
 
-Returns a new C<RPi::WiringPi::LCD> object.
+Returns a new C<RPi::LCD> object.
 
 =head2 init(%args)
 
