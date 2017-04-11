@@ -11,10 +11,6 @@ use RPi::WiringPi::Constant qw(:all);
 my $continue = 1;
 $SIG{INT} = sub { $continue = 0; };
 
-# this is the button pin that when an edge-change
-# (interrupt) happens, we switch from XP to remaining
-# XP
-
 # prepare and initialize the LCD
 
 my $lcd = RPi::LCD->new;

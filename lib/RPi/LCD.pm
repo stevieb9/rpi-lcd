@@ -134,7 +134,8 @@ L<RPi::WiringPi> object.
 
 =head2 new()
 
-Returns a new C<RPi::LCD> object.
+Returns a new C<RPi::LCD> object. We check if any RPi::WiringPi setup routines
+have been run, and if not, we set up in GPIO pin mode.
 
 =head2 init(%args)
 
