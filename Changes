@@ -1,4 +1,12 @@
 Revision history for RPi-LCD
 
+2.3602 UNREL
+        - removed double-typed work in POD DESC (closes #2)
+        - corrected reference to RPi::WiringPi in the description in POD (closes
+          #4)
+        - fix unescaped unicode char in POD
+        - rename print() to puts(), and print_char() to put_char(), and kept the
+          old names as aliases (and updated POD) (closes #1)
+
 2.3601  2017-04-11
         - extracted from RPi::WiringPi::LCD and made standalone
