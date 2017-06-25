@@ -7,6 +7,9 @@ Revision history for RPi-LCD
         - fix unescaped unicode char in POD
         - rename print() to puts(), and print_char() to put_char(), and kept the
           old names as aliases (and updated POD) (closes #1)
+        - added check for the return of the file descriptor from WiringPi::API
+          lcd_init(). If it's -1, we die(). If this is not checked, a segfault
+          will occur if you somehow create more than 8 LCDs
 
 2.3601  2017-04-11
         - extracted from RPi::WiringPi::LCD and made standalone

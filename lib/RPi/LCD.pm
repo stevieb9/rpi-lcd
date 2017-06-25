@@ -6,12 +6,14 @@ use warnings;
 our $VERSION = '2.3602';
 
 use parent 'WiringPi::API';
+use Carp qw(confess);
 use RPi::WiringPi::Constant qw(:all);
 
 sub new {
     my $self = bless {}, shift;
     if (! defined $ENV{RPI_PIN_SCHEME}){
-        $self->setup_gpio();
+        $ENV{RPI_PIN_SCHEME} = RPI_MODE_GPIO;
+        $self->setup_gpio;
     }
     return $self;
 }
@@ -82,10 +84,16 @@ sub puts {
 sub _fd {
     my ($self, $fd) = @_;
     if (defined $fd){
+        if ($fd == -1){
+            confess "\nMaximum number of LCDs (8) in use. Can't continue...\n" .
+                    "Are you instantiating LCD objects within a loop?\n\n";
+        }
         $self->{fd} = $fd;
     }
     return $self->{fd}
 }
+sub __placeholder {} # vim folds
+
 1;
 __END__
 
