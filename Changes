@@ -1,6 +1,6 @@
 Revision history for RPi-LCD
 
-2.3603 UNREL
+2.3603  2017-06-25
         - bump prereq of WiringPI::API to 2.3612
 
 2.3602 2017-06-25
