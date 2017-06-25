@@ -1,6 +1,6 @@
 Revision history for RPi-LCD
 
-2.3602 UNREL
+2.3602 2017-06-25
         - removed double-typed word in POD DESC (closes #2)
         - corrected reference to RPi::WiringPi in the description in POD (closes
           #4)
