@@ -1,7 +1,7 @@
 Revision history for RPi-LCD
 
 2.3604 UNREL
-
+        - added RPi::WiringPi::Constant v1.00 as a prereq
 
 2.3603  2017-06-25
         - bump prereq of WiringPI::API to 2.3612
