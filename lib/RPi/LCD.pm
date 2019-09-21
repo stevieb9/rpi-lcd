@@ -3,7 +3,7 @@ package RPi::LCD;
 use strict;
 use warnings;
 
-our $VERSION = '2.3604';
+our $VERSION = '2.3605';
 
 use parent 'WiringPi::API';
 use Carp qw(confess);
