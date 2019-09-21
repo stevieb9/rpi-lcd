@@ -7,7 +7,7 @@ our $VERSION = '2.3604';
 
 use parent 'WiringPi::API';
 use Carp qw(confess);
-use RPi::WiringPi::Constant qw(:all);
+use RPi::Const qw(:all);
 
 sub new {
     my $self = bless {}, shift;
