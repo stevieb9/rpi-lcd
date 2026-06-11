@@ -11,8 +11,8 @@ use RPi::Const qw(:all);
 
 sub new {
     my $self = bless {}, shift;
-    if (! defined $ENV{RPI_PIN_SCHEME}){
-        $ENV{RPI_PIN_SCHEME} = RPI_MODE_GPIO;
+    if (! defined $ENV{RPI_PIN_MODE}){
+        $ENV{RPI_PIN_MODE} = RPI_MODE_GPIO;
         $self->setup_gpio;
     }
     return $self;
