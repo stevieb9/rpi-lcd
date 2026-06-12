@@ -1,6 +1,6 @@
 Revision history for RPi-LCD
 
-3.1801 UNREL
+3.1801    2026-06-12
         - new() now checks/sets $ENV{RPI_PIN_MODE} (the variable the rest of
           the RPi:: ecosystem uses) instead of the never-read RPI_PIN_SCHEME;
           previously the guard never fired, so setup_gpio() was always run,
